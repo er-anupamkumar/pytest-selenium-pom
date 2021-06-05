@@ -9,6 +9,7 @@ class LoginPage(BasePage):
     PASSWORD = (By.ID, "txtPassword")
     LOGIN_BUTTON= (By.ID,"btnLogin")
     ERROR_FIELD= (By.ID,"spanMessage")
+    CREDENTIALS_FEILD=(By.XPATH,"//*[@id=\"content\"]/div[2]/span")
 
     def __init__(self,driver):
         super().__init__(driver)
@@ -24,4 +25,14 @@ class LoginPage(BasePage):
 
     def get_ErrorMessage(self):
         return self.get_element_text(self.ERROR_FIELD)
+
+    def get_ProvidedUserName(self):
+        credentialsText= self.get_element_text(self.CREDENTIALS_FEILD)
+        username = credentialsText.split("|")[0].split(":")[1].strip();
+        return username
+
+    def get_ProvidedPassword(self):
+        credentialsText= self.get_element_text(self.CREDENTIALS_FEILD)
+        password = credentialsText.split("|")[1].split(":")[1].replace(")", "").strip();
+        return password
 
