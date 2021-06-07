@@ -1,6 +1,6 @@
 from selenium.webdriver.common.by import By
 
-from config.config import TestData
+from config.config import Configurations
 from pages.BasePage import BasePage
 
 class HomePage(BasePage):

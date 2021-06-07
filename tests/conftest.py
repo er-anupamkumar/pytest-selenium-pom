@@ -1,6 +1,6 @@
 import pytest
 from selenium import webdriver
-from config.config import TestData
+from config.config import Configurations
 from webdriver_manager.chrome import ChromeDriverManager
 from webdriver_manager.firefox import GeckoDriverManager
 

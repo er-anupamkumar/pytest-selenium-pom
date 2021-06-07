@@ -1,6 +1,6 @@
 from selenium.webdriver.common.by import By
 
-from config.config import TestData
+from config.config import Configurations
 from pages.BasePage import BasePage
 
 class LoginPage(BasePage):
@@ -13,7 +13,7 @@ class LoginPage(BasePage):
 
     def __init__(self,driver):
         super().__init__(driver)
-        self.driver.get(TestData.BASE_URL)
+        self.driver.get(Configurations.BASE_URL)
 
     def get_login_page_title(self,title):
         return self.get_title(self,title)

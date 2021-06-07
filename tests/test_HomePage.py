@@ -2,7 +2,7 @@ from datetime import time
 
 import pytest
 
-from config.config import TestData
+from config.config import Configurations
 from pages.Home import HomePage
 from pages.Login import LoginPage
 from tests.test_base import BaseTest
